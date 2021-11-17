@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets",
+  "info": {
+    "name": "Assets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Purchase_time": {
+      "type": "date"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "admin_user": {
+      "plugin": "admin",
+      "model": "user"
+    },
+    "Slug": {
+      "type": "string"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Audio": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "sector": {
+      "model": "sectors",
+      "via": "asset"
+    }
+  }
+}

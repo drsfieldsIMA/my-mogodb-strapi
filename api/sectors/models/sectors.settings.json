@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "name": "Sectors"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Industry": {
+      "type": "enumeration",
+      "enum": [
+        "Chemical",
+        "Marine",
+        "Air_travel",
+        "Automobile",
+        "Wind_power"
+      ]
+    },
+    "assets": {
+      "collection": "assets"
+    },
+    "asset": {
+      "via": "sector",
+      "model": "assets"
+    }
+  }
+}
